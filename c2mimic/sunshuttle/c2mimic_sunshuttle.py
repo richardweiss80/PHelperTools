@@ -5,6 +5,9 @@
 # Can be downloaded at VT, Any.Run, etc.
 # Please do not use malware on non-analysis ready/designed systems
 
+# Reference: https://securelist.com/extracting-type-information-from-go-binaries/104715/
+# Reference: https://malpedia.caad.fkie.fraunhofer.de/details/win.goldmax
+
 import os
 import sys
 import http.server
