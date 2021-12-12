@@ -25,14 +25,13 @@ def cycldek(data):
     return hex(hash)
 
 def emotet_new(data):
-    # filehash: 
+    # filehash: ba758c64519be23b5abe7991b71cdcece30525f14e225f2fa07bbffdf406e539
     # Used for the new emotet version late 2021
-    hash = UInt32(0)
-    # hash = 0
+    # For Hashing the basedllname another value is used: 0x326E19FC
+    hash = 0
     for char in data:
-        # hash = (ord(char.lower()) + hash * 0x1003f) & 0xffffffff
-        hash = (hash << 16) + (hash << 6) + ord(char) - hash
-    return hex(hash ^ 0x1E5C48DE) # 0x6C60cfb2 Test: 5BCF9C13
+        hash = ((hash << 16) + (hash << 6) + ord(char) - hash) & 0xFFFFFFFF
+    return hex(hash ^ 0x1E5C48DE) # Figure out the correst XOR_Key specific to the sample
 
 def FNV_1a64(data):
     hash = 0xcbf29ce484222325
