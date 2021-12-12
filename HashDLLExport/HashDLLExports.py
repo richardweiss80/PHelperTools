@@ -8,8 +8,6 @@ import sys
 import re
 import argparse
 import textwrap
-from malduck import UInt32
-
 
 threatactor = ["cycldek", "emotet_new", "FNV_1a", "SF_reflectiveDLL"]
 
@@ -28,9 +26,10 @@ def cycldek(data):
 def emotet_new(data):
     # filehash: ba758c64519be23b5abe7991b71cdcece30525f14e225f2fa07bbffdf406e539
     # Used for the new emotet version late 2021
-    hash = UInt32(0)
+    # For Hashing the basedllname another value is used: 0x326E19FC
+    hash = 0
     for char in data:
-        hash = (hash << 16) + (hash << 6) + ord(char) - hash
+        hash = ((hash << 16) + (hash << 6) + ord(char) - hash) & 0xFFFFFFFF
     return hex(hash ^ 0x1E5C48DE) # Figure out the correst XOR_Key specific to the sample
 
 def FNV_1a(data):
