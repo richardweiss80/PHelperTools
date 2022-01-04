@@ -9,12 +9,16 @@ import sys
 import re
 import argparse
 import textwrap
+import binascii
 
-threatactor = ["cycldek", "emotet_new", "solarwinds_FNV_1a", "SF_reflectiveDLL"]
+threatactor = ["crc32", "cycldek", "emotet_new", "solarwinds_FNV_1a", "SF_reflectiveDLL"]
 
 def hash_func(provider, data):
     return globals()[provider](data)
 
+def crc32(data):
+    # filehash: a0ac02a1e6c908b90173e86c3e321f2bab082ed45236503a21eb7d984de10611 (decrypted resource content)
+    return hex(binascii.crc32(bytes(data, 'utf-8')))
 
 def cycldek(data):
     # filehash: 
