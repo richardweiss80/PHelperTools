@@ -1,5 +1,5 @@
-# Use bindump for extracting the exported functions of the examined DLLs
-# e.g. bindump /EXPORTS C:\Windows\System32\kernel32.dll > <filename>
+# Use dumpbin for extracting the exported functions of the examined DLLs
+# e.g. dumpbin /EXPORTS C:\Windows\System32\kernel32.dll > <filename>
 # add the hash func.
 
 # could result in false representation, if the RVA result contains [A-Z]{4,}
