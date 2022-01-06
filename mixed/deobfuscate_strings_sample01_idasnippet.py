@@ -1,6 +1,7 @@
 # hash = "a0ac02a1e6c908b90173e86c3e321f2bab082ed45236503a21eb7d984de10611"
 # description = "deobfuscation of loaded functions and modules"
 # only a quick code snippet for demonstration, how to get the hashed strings and put comments in IDA to the call functions.
+# used this time to put the cursor on the deobfuscation function. The pos value can also be hardcoded or the target_func (0x00401300)
 
 idaapi.msg_clear()
 
