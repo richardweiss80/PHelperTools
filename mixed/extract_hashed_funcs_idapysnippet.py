@@ -49,7 +49,7 @@ for tup in result:
             break
 
 for tup in output:
-    print(f"{tup[1]}: {tup[4]}") # as output in ida and to follow the offset by clicking on it.
+    print(f"{hex(tup[1])}: {tup[4]}") # as output in ida and to follow the offset by clicking on it.
     set_cmt(tup[1], tup[4], 0)
 
 # For documentation purposes
@@ -57,29 +57,29 @@ for tup in output:
 # [(1, '0x401028', 'kernel32.dll', '0C1F3B876h', 'CreateToolhelp32Snapshot'), (2, '0x401036', 'kernel32.dll', '8197004Ch', 'Process32FirstW'), (3, '0x401048', 'kernel32.dll', '0BC6B67BFh', 'Process32NextW'), (4, '0x401301', 'wininet.dll', '2B53DA6h', 'HttpQueryInfoA'), (5, '0x401423', 'kernel32.dll', '7A3A310h', 'GetTempPathW'), (6, '0x401431', 'kernel32.dll', '759903FCh', 'CreateDirectoryW'), (7, '0x40143f', 'kernel32.dll', '0A1EFE929h', 'CreateFileW'), (8, '0x401451', 'kernel32.dll', '0CCE95612h', 'WriteFile'), (9, '0x4017b9', 'kernel32.dll', '649EB9C1h', 'GetThreadContext'), (10, '0x4017f6', 'kernel32.dll', '0F7C7AE42h', 'ReadProcessMemory'), (12, '0x401847', 'kernel32.dll', '0E62E824Dh', 'VirtualAllocEx'), (13, '0x4018b0', 'kernel32.dll', '4F58972Eh', 'WriteProcessMemory'), (14, '0x401ad0', 'kernel32.dll', '5688CBD8h', 'SetThreadContext'), (15, '0x401b13', 'kernel32.dll', '5D180413h', 'VirtualProtectEx'), (16, '0x401c5b', 'kernel32.dll', '3872BEB9h', 'ResumeThread'), (17, '0x401d57', 'kernel32.dll', '0A851D916h', 'CreateProcessA'), (18, '0x401d68', 'kernel32.dll', '4F58972Eh', 'WriteProcessMemory'), (19, '0x401d79', 'kernel32.dll', '3872BEB9h', 'ResumeThread'), (20, '0x401d85', 'kernel32.dll', '0E62E824Dh', 'VirtualAllocEx'), (21, '0x401d96', 'kernel32.dll', '9CE0D4Ah', 'VirtualAlloc'), (22, '0x401da7', 'kernel32.dll', '0FF808C10h', 'CreateRemoteThread'), (23, '0x401ded', 'wininet.dll', '0DA16A83Dh', 'InternetOpenA'), (24, '0x401e01', 'wininet.dll', '16505E0h', 'InternetOpenUrlA'), (25, '0x401e15', 'wininet.dll', '6CC098F5h', 'InternetReadFile'), (26, '0x401e29', 'wininet.dll', '0E5191D24h', 'InternetCloseHandle'), (27, '0x401f26', 'kernel32.dll', '8436F795h', 'IsDebuggerPresent')]
 
 # Output:
-# 4198440: CreateToolhelp32Snapshot
-# 4198454: Process32FirstW
-# 4198472: Process32NextW
-# 4199169: HttpQueryInfoA
-# 4199459: GetTempPathW
-# 4199473: CreateDirectoryW
-# 4199487: CreateFileW
-# 4199505: WriteFile
-# 4200377: GetThreadContext
-# 4200438: ReadProcessMemory
-# 4200519: VirtualAllocEx
-# 4200624: WriteProcessMemory
-# 4201168: SetThreadContext
-# 4201235: VirtualProtectEx
-# 4201563: ResumeThread
-# 4201815: CreateProcessA
-# 4201832: WriteProcessMemory
-# 4201849: ResumeThread
-# 4201861: VirtualAllocEx
-# 4201878: VirtualAlloc
-# 4201895: CreateRemoteThread
-# 4201965: InternetOpenA
-# 4201985: InternetOpenUrlA
-# 4202005: InternetReadFile
-# 4202025: InternetCloseHandle
-# 4202278: IsDebuggerPresent
+# 0x401028: CreateToolhelp32Snapshot
+# 0x401036: Process32FirstW
+# 0x401048: Process32NextW
+# 0x401301: HttpQueryInfoA
+# 0x401423: GetTempPathW
+# 0x401431: CreateDirectoryW
+# 0x40143f: CreateFileW
+# 0x401451: WriteFile
+# 0x4017b9: GetThreadContext
+# 0x4017f6: ReadProcessMemory
+# 0x401847: VirtualAllocEx
+# 0x4018b0: WriteProcessMemory
+# 0x401ad0: SetThreadContext
+# 0x401b13: VirtualProtectEx
+# 0x401c5b: ResumeThread
+# 0x401d57: CreateProcessA
+# 0x401d68: WriteProcessMemory
+# 0x401d79: ResumeThread
+# 0x401d85: VirtualAllocEx
+# 0x401d96: VirtualAlloc
+# 0x401da7: CreateRemoteThread
+# 0x401ded: InternetOpenA
+# 0x401e01: InternetOpenUrlA
+# 0x401e15: InternetReadFile
+# 0x401e29: InternetCloseHandle
+# 0x401f26: IsDebuggerPresent
